@@ -14,6 +14,7 @@ import edu.wpi.first.gradlerio.deploy.systemcore.DSDeployLocation;
 import edu.wpi.first.gradlerio.deploy.systemcore.FRCJNILibraryArtifact;
 import edu.wpi.first.gradlerio.deploy.systemcore.FRCJavaArtifact;
 import edu.wpi.first.gradlerio.deploy.systemcore.FRCNativeArtifact;
+import edu.wpi.first.gradlerio.deploy.systemcore.MdnsDeployLocation;
 import edu.wpi.first.gradlerio.deploy.systemcore.RobotCommandArtifact;
 import edu.wpi.first.gradlerio.deploy.systemcore.RobotProgramKillArtifact;
 import edu.wpi.first.gradlerio.deploy.systemcore.RobotProgramStartArtifact;
@@ -39,6 +40,7 @@ public class FRCDeployPlugin implements Plugin<Project> {
         NamedObjectFactory.registerType(RobotCommandArtifact.class, artifacts, target, objects);
 
         NamedObjectFactory.registerType(DSDeployLocation.class, locations, target, objects);
+        NamedObjectFactory.registerType(MdnsDeployLocation.class, locations, target, objects);
     }
 
     @Override

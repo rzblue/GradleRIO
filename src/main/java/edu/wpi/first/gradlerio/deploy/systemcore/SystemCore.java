@@ -64,7 +64,7 @@ public class SystemCore extends WPIRemoteTarget {
         this.team = team;
         setAddresses(
             "10." + (team / 100) + "." + (team % 100) + ".2", // 10.TE.AM.2
-            "robot.local",
+            // "robot.local",
             "172.28.0.1", // USB
             "172.30.0.1" // WiFi
 
@@ -86,6 +86,11 @@ public class SystemCore extends WPIRemoteTarget {
             ds.setUser(username);
             ds.setPassword(password);
             ds.setIpv6(false);
+        });
+        getLocations().create("mdns", MdnsDeployLocation.class, mdns -> {
+            mdns.setUser(username);
+            mdns.setPassword(password);
+            mdns.setIpv6(false);
         });
     }
 
